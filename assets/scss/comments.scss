@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP");
+
+$color-black-a0: rgba(0,0,0,0);
+$color-transparent: transparent;
+
+/* Animation keyframes. */
+@keyframes anim {
+  0% { opacity: 0; transform: translateX(16px); }
+  100% { opacity: 1; transform: none;}
+}
+
+/* Background colors. */
+body {
+  overflow: hidden;
+  background-color: $color-black-a0;
+}
+
+/* Transparent background. */
+yt-live-chat {
+  &-renderer {
+    background-color: transparent !important;
+  }
+  &-text-message-renderer {
+    &,
+    &[is-highlighted] {
+      background-color: transparent !important;
+    }
+    &[author-type="owner"] {
+      &,
+      &[is-highlighted] {
+        background-color: transparent !important;
+      }
+    }
+    &[author-type="moderator"] {
+      &,
+      &[is-highlighted] {
+        background-color: transparent !important;
+      }
+    }
+    &[author-type="member"] {
+      &,
+      &[is-highlighted] {
+        background-color: transparent !important;
+      }
+    }
+  }
+  &-author-chip {
+    #author-name {
+      background-color: transparent !important;
+    }
+  }
+}
+
+/* Outlines */
+yt-live-chat {
+  &-renderer {
+    * {
+      text-shadow: -1px -1px #000000,-1px 0px #000000,-1px 1px #000000,0px -1px #000000,0px 0px #000000,0px 1px #000000,1px -1px #000000,1px 0px #000000,1px 1px #000000;
+      font-family: "Noto Serif JP", serif;
+      font-size: 16px !important;
+      line-height: 16px !important;
+    }
+  }
+  &-text-message-renderer,
+  &-legacy-paid-message-renderer {
+    #content {
+      overflow: initial !important;
+    }
+  }
+}
+
+/* Hide scrollbar. */
+yt-live-chat {
+  &-item-list-renderer {
+    #items,
+    #item-scroller {
+      overflow: hidden !important;
+    }
+  }
+}
+
+/* Hide header and input. */
+yt-live-chat {
+  &-header-renderer,
+  &-message-input-renderer {
+    display: none !important;
+  }
+}
+
+/* Reduce side padding. */
+yt-live-chat {
+  &-text-message-renderer,
+  &-legacy-paid-message-renderer {
+    padding-left: 20px !important;
+    padding-right: 4px !important;
+  }
+  &-paid-message-renderer {
+    #header {
+      padding-left: 20px !important;
+      padding-right: 4px !important;
+    }
+  }
+}
+
+
+/* Avatars. */
+yt-live-chat {
+  &-text-message-renderer,
+  &-paid-message-renderer,
+  &-legacy-paid-message-renderer {
+    #author-photo {
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 32px !important;
+      margin-right: 8px !important;
+    }
+  }
+}
+
+/* Hide badges. */
+yt-live-chat{
+  &-text-message-renderer {
+    #author-badges {
+      display: none !important;
+      vertical-align: text-top !important;
+    }
+  }
+}
+
+/* Timestamps. */
+yt-live-chat {
+  &-text-message-renderer {
+    #timestamp {
+      display: inline !important;
+      color: #a0a0a0 !important;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 14px !important;
+      line-height: 14px !important;
+    }
+  }
+}
+
+/* Badges. */
+yt-live-chat {
+  &-text-message-renderer {
+    &#author-name {
+      &[type="owner"],
+      &.owner {
+        color: #1e5a5a !important;
+      }
+      &[type="moderator"],
+      &.moderator {
+        color: #5a5aff !important;
+      }
+      &[type="member"],
+      &.member {
+        color: #ff3c3c !important;
+      }
+    }
+    & yt-live-chat-author-badge-renderer {
+      &[type="owner"] {
+        color: #1e5a5a !important;
+      }
+      &[type="moderator"] {
+        color: #5a5aff !important;
+      }
+      &[type="member"] {
+        color: #ff3c3c !important;
+      }
+    }
+  }
+}
+
+/* Channel names. */
+yt-live-chat {
+  &-text-message-renderer {
+    #author-name {
+      color: #d2d2d2 !important;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 18px !important;
+      line-height: 18px !important;
+    }
+  }
+}
+
+/* Messages. */
+yt-live-chat {
+  &-text-message-renderer {
+    #message {
+      display: block !important;
+      &,
+      & * {
+        color: #d2d2d2 !important;
+        font-family: "Noto Serif JP", serif;
+        font-size: 16px !important;
+        line-height: 16px !important;
+      }
+    }
+  }
+}
+
+/* SuperChat/Fan Funding Messages. */
+yt-live-chat {
+  &-paid-message-renderer {
+    margin: 4px 0 !important;
+    &[is-deleted] {
+      display: none !important;
+    }
+    #author-name {
+      &,
+      & * {
+        color: #78ff78 !important;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 18px !important;
+        line-height: 18px !important;
+      }
+    }
+    #purchase-amount {
+      &,
+      & * {
+        color: #a0ffa0 !important;
+        font-family: "Noto Serif JP", serif;
+        font-size: 16px !important;
+        line-height: 16px !important;
+      }
+    }
+    #content {
+      &,
+      & * {
+        color: #a0ffff !important;
+        font-family: "Noto Serif JP", serif;
+        font-size: 16px !important;
+        line-height: 16px !important;
+      }
+    }
+    a {
+      text-decoration: none !important;
+    }
+  }
+  &-legacy-paid-message-renderer {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    &[is-deleted] {
+      display: none !important;
+    }
+    #event-text {
+      &,
+      & * {
+        color: #78ff78 !important;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 18px !important;
+        line-height: 18px !important;
+      }
+    }
+    #detail-text {
+      &,
+      & * {
+        color: #a0ffa0 !important;
+        font-family: "Noto Serif JP", serif;
+        font-size: 16px !important;
+        line-height: 16px !important;
+      }
+    }
+    a {
+      text-decoration: none !important;
+    }
+  }
+  &-ticker {
+    &-renderer {
+      display: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+  &-paid-message-item-renderer {
+    &,
+    & * {
+      color: #a0ffa0 !important;
+      font-family: "Noto Serif JP", serif;
+    
+    }
+  }
+  &-sponsor-item-renderer {
+    &,
+    & * {
+      color: #a0ffa0 !important;
+      font-family: "Noto Serif JP", serif;
+    
+    }
+  }
+  &-mode-change-message-renderer,
+  &-viewer-engagement-message-renderer,
+  &-restricted-participation-renderer {
+    display: none !important;
+  }
+  &-text-message-renderer,
+  &-legacy-paid-message-renderer {
+    animation: anim 400ms;
+    animation-fill-mode: both;
+  }
+}
+
