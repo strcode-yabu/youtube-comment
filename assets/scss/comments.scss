@@ -172,10 +172,6 @@ yt-live-chat-text-message-renderer {
     font-family: $font;
     font-size: 16px !important;
     line-height: 1 !important;
-    // &::after {
-    //   content: ":";
-    //   margin-left: 2px;
-    // }
   }
 }
 
@@ -289,21 +285,43 @@ yt-live-chat {
     transform-origin: left;
     opacity: 0;
   }
-  100% {
+  10% {
     transform: scale(1) translateY(0);
     transform-origin: left;
     opacity: 1;
+  }
+  90% {
+    transform: scale(1) translateY(0);
+    transform-origin: left;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    transform-origin: left;
+    opacity: .25;
   }
 }
 
 @keyframes anime_paid {
   0% {
-    transform: translateY(10px);
+    transform: scale(0) translateY(5px);
+    transform-origin: left;
     opacity: 0;
   }
-  100% {
-    transform: translateY(0);
+  10% {
+    transform: scale(1) translateY(0);
+    transform-origin: left;
     opacity: 1;
+  }
+  90% {
+    transform: scale(1) translateY(0);
+    transform-origin: left;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    transform-origin: left;
+    opacity: .25;
   }
 }
 
@@ -311,7 +329,7 @@ yt-live-chat {
   &-text,
   &-legacy-paid {
     &-message-renderer {
-      animation: anime 600ms both;
+      animation: anime 10000ms both;
     }
   }
 }
@@ -319,7 +337,7 @@ yt-live-chat {
 yt-live-chat {
   &-paid {
     &-message-renderer {
-      animation: anime_paid 600ms both;
+      animation: anime_paid 10000ms both;
     }
   }
 }

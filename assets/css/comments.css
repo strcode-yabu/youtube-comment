@@ -202,12 +202,26 @@ yt-live-chat-renderer #action-panel {
             transform-origin: left;
     opacity: 0;
   }
-  100% {
+  10% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
     -webkit-transform-origin: left;
             transform-origin: left;
     opacity: 1;
+  }
+  90% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: .25;
   }
 }
 @keyframes anime {
@@ -218,49 +232,99 @@ yt-live-chat-renderer #action-panel {
             transform-origin: left;
     opacity: 0;
   }
-  100% {
+  10% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
     -webkit-transform-origin: left;
             transform-origin: left;
     opacity: 1;
   }
+  90% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: .25;
+  }
 }
 
 @-webkit-keyframes anime_paid {
   0% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: scale(0) translateY(5px);
+            transform: scale(0) translateY(5px);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     opacity: 0;
   }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+  10% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     opacity: 1;
+  }
+  90% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: .25;
   }
 }
 
 @keyframes anime_paid {
   0% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: scale(0) translateY(5px);
+            transform: scale(0) translateY(5px);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     opacity: 0;
   }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+  10% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     opacity: 1;
+  }
+  90% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: .25;
   }
 }
 
 yt-live-chat-text-message-renderer, yt-live-chat-legacy-paid-message-renderer {
-  -webkit-animation: anime 600ms both;
-          animation: anime 600ms both;
+  -webkit-animation: anime 10000ms both;
+          animation: anime 10000ms both;
 }
 
 yt-live-chat-paid-message-renderer {
-  -webkit-animation: anime_paid 600ms both;
-          animation: anime_paid 600ms both;
+  -webkit-animation: anime_paid 10000ms both;
+          animation: anime_paid 10000ms both;
 }
 
 /*Speech bubble*/
