@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 /* Background colors*/
 body {
   overflow: hidden;
@@ -8,26 +8,120 @@ body {
 /* Transparent background. */
 yt-live-chat-renderer {
   background-color: transparent !important;
+  outline: none !important;
+  padding-top: 32px;
 }
 
 yt-live-chat-text-message-renderer, yt-live-chat-text-message-renderer[is-highlighted] {
-  background-color: transparent !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 32px 8px 16px;
+  position: relative;
 }
-
-yt-live-chat-text-message-renderer[author-type="owner"], yt-live-chat-text-message-renderer[author-type="owner"][is-highlighted] {
-  background-color: transparent !important;
+yt-live-chat-text-message-renderer:not(:first-child), yt-live-chat-text-message-renderer[is-highlighted]:not(:first-child) {
+  margin-top: 32px !important;
 }
-
-yt-live-chat-text-message-renderer[author-type="moderator"], yt-live-chat-text-message-renderer[author-type="moderator"][is-highlighted] {
-  background-color: transparent !important;
+yt-live-chat-text-message-renderer #content, yt-live-chat-text-message-renderer[is-highlighted] #content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
 }
-
-yt-live-chat-text-message-renderer[author-type="member"], yt-live-chat-text-message-renderer[author-type="member"][is-highlighted] {
-  background-color: transparent !important;
+yt-live-chat-text-message-renderer[author-type=owner], yt-live-chat-text-message-renderer[author-type=owner][is-highlighted] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 32px 8px 16px;
+  position: relative;
+}
+yt-live-chat-text-message-renderer[author-type=owner]:not(:first-child), yt-live-chat-text-message-renderer[author-type=owner][is-highlighted]:not(:first-child) {
+  margin-top: 32px !important;
+}
+yt-live-chat-text-message-renderer[author-type=owner] #content, yt-live-chat-text-message-renderer[author-type=owner][is-highlighted] #content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+yt-live-chat-text-message-renderer[author-type=moderator], yt-live-chat-text-message-renderer[author-type=moderator][is-highlighted] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 32px 8px 16px;
+  position: relative;
+}
+yt-live-chat-text-message-renderer[author-type=moderator]:not(:first-child), yt-live-chat-text-message-renderer[author-type=moderator][is-highlighted]:not(:first-child) {
+  margin-top: 32px !important;
+}
+yt-live-chat-text-message-renderer[author-type=moderator] #content, yt-live-chat-text-message-renderer[author-type=moderator][is-highlighted] #content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+yt-live-chat-text-message-renderer[author-type=member], yt-live-chat-text-message-renderer[author-type=member][is-highlighted] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 32px 8px 16px;
+  position: relative;
+}
+yt-live-chat-text-message-renderer[author-type=member]:not(:first-child), yt-live-chat-text-message-renderer[author-type=member][is-highlighted]:not(:first-child) {
+  margin-top: 32px !important;
+}
+yt-live-chat-text-message-renderer[author-type=member] #content, yt-live-chat-text-message-renderer[author-type=member][is-highlighted] #content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
 }
 
 yt-live-chat-author-chip #author-name {
-  background-color: transparent !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 32px 8px 16px;
+  position: relative;
+}
+yt-live-chat-author-chip #author-name:not(:first-child) {
+  margin-top: 32px !important;
+}
+yt-live-chat-author-chip #author-name #content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
 }
 
 /* Hide scrollbar. */
@@ -41,25 +135,11 @@ yt-live-chat-header-renderer, yt-live-chat-message-input-renderer {
   display: none !important;
 }
 
-/* Reduce side padding. */
-yt-live-chat-text-message-renderer, yt-live-chat-legacy-paid-message-renderer {
-  padding-left: 4px !important;
-  padding-right: 4px !important;
-}
-
-yt-live-chat-paid-message-renderer #header {
-  padding-left: 4px !important;
-  padding-right: 4px !important;
-}
-
 /* Avatars. */
 yt-live-chat-text-message-renderer #author-photo,
 yt-live-chat-paid-message-renderer #author-photo,
 yt-live-chat-legacy-paid-message-renderer #author-photo {
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 32px !important;
-  margin-right: 6px !important;
+  display: none !important;
 }
 
 /* Hide badges. */
@@ -70,298 +150,284 @@ yt-live-chat-text-message-renderer #author-badges {
 
 /* Timestamps. */
 yt-live-chat-text-message-renderer #timestamp {
-  color: #5a5a5a !important;
-  font-family: "Hachi Maru Pop", cursive;
-  font-size: 16px !important;
-  line-height: 16px !important;
-}
-
-/* Badges. */
-yt-live-chat-text-message-renderer #author-name[type="owner"],
-yt-live-chat-text-message-renderer #author-name.owner,
-yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="owner"] {
-  color: #1eb45a !important;
-}
-
-yt-live-chat-text-message-renderer #author-name[type="moderator"],
-yt-live-chat-text-message-renderer #author-name.moderator,
-yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="moderator"] {
-  color: #d21e1e !important;
-}
-
-yt-live-chat-text-message-renderer #author-name[type="member"],
-yt-live-chat-text-message-renderer #author-name.member,
-yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="member"] {
-  color: #1e783c !important;
-}
-
-/* Channel names. */
-yt-live-chat-text-message-renderer #author-name {
-  color: #1e78b4 !important;
-  font-family: "Hachi Maru Pop", cursive;
+  color: rgb(90, 90, 90) !important;
+  font-family: "DotGothic16", sans-serif;
   font-size: 16px !important;
   line-height: 1 !important;
 }
 
+/* Badges. */
+yt-live-chat-text-message-renderer #author-name[type=owner],
+yt-live-chat-text-message-renderer #author-name.owner,
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type=owner] {
+  color: rgb(141, 127, 218) !important;
+}
+yt-live-chat-text-message-renderer #author-name[type=moderator],
+yt-live-chat-text-message-renderer #author-name.moderator,
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type=moderator] {
+  color: rgb(210, 30, 30) !important;
+}
+yt-live-chat-text-message-renderer #author-name[type=member],
+yt-live-chat-text-message-renderer #author-name.member,
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type=member] {
+  color: rgb(226, 166, 97) !important;
+}
+
+/* Channel names. */
+yt-live-chat-text-message-renderer #author-name {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 0.5em 0.75em 0.55em;
+  position: absolute;
+  top: -16px;
+  left: 8px;
+  color: rgb(255, 255, 255) !important;
+  font-family: "DotGothic16", sans-serif;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+yt-live-chat-text-message-renderer #author-name::after {
+  content: ":";
+}
+
 /* Messages. */
-yt-live-chat-text-message-renderer #message,
-yt-live-chat-text-message-renderer #message * {
-  color: #1e1e1e !important;
-  font-family: "Hachi Maru Pop", cursive;
+yt-live-chat-text-message-renderer #message, yt-live-chat-text-message-renderer #message * {
+  color: rgb(255, 255, 255) !important;
+  font-family: "DotGothic16", sans-serif;
   font-size: 14px !important;
   line-height: 1 !important;
 }
 
 /* SuperChat/Fan Funding Messages. */
-yt-live-chat-paid-message-renderer #author-name,
-yt-live-chat-paid-message-renderer #author-name *,
-yt-live-chat-paid-message-renderer #event-text,
-yt-live-chat-paid-message-renderer #event-text *, yt-live-chat-legacy-paid-message-renderer #author-name,
-yt-live-chat-legacy-paid-message-renderer #author-name *,
-yt-live-chat-legacy-paid-message-renderer #event-text,
-yt-live-chat-legacy-paid-message-renderer #event-text * {
-  color: white !important;
-  font-family: "Hachi Maru Pop", cursive;
+yt-live-chat-paid-message-renderer, yt-live-chat-legacy-paid-message-renderer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 32px 8px 16px;
+  position: relative;
+  padding-top: 16px;
+}
+yt-live-chat-paid-message-renderer:not(:first-child), yt-live-chat-legacy-paid-message-renderer:not(:first-child) {
+  margin-top: 32px !important;
+}
+yt-live-chat-paid-message-renderer #content, yt-live-chat-legacy-paid-message-renderer #content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+yt-live-chat-paid-message-renderer #author-name, yt-live-chat-paid-message-renderer #author-name *, yt-live-chat-paid-message-renderer #event-text, yt-live-chat-paid-message-renderer #event-text *, yt-live-chat-legacy-paid-message-renderer #author-name, yt-live-chat-legacy-paid-message-renderer #author-name *, yt-live-chat-legacy-paid-message-renderer #event-text, yt-live-chat-legacy-paid-message-renderer #event-text * {
+  color: rgb(255, 255, 255) !important;
+  font-family: "DotGothic16", sans-serif;
   font-size: 20px !important;
-  line-height: 20px !important;
+  font-weight: bold;
+  line-height: 1 !important;
 }
-
-yt-live-chat-paid-message-renderer #purchase-amount,
-yt-live-chat-paid-message-renderer #purchase-amount *,
-yt-live-chat-paid-message-renderer #detail-text,
-yt-live-chat-paid-message-renderer #detail-text *, yt-live-chat-legacy-paid-message-renderer #purchase-amount,
-yt-live-chat-legacy-paid-message-renderer #purchase-amount *,
-yt-live-chat-legacy-paid-message-renderer #detail-text,
-yt-live-chat-legacy-paid-message-renderer #detail-text * {
-  color: white !important;
-  font-family: "Hachi Maru Pop", cursive;
+yt-live-chat-paid-message-renderer #purchase-amount, yt-live-chat-paid-message-renderer #purchase-amount *, yt-live-chat-paid-message-renderer #detail-text, yt-live-chat-paid-message-renderer #detail-text *, yt-live-chat-legacy-paid-message-renderer #purchase-amount, yt-live-chat-legacy-paid-message-renderer #purchase-amount *, yt-live-chat-legacy-paid-message-renderer #detail-text, yt-live-chat-legacy-paid-message-renderer #detail-text * {
+  color: rgb(255, 255, 255) !important;
+  font-family: "DotGothic16", sans-serif;
   font-size: 18px !important;
-  line-height: 18px !important;
+  line-height: 1 !important;
 }
-
 yt-live-chat-paid-message-renderer {
-  margin: 4px 0 !important;
+  margin: 0 !important;
+  padding-top: 32px !important;
 }
-
-yt-live-chat-paid-message-renderer #content,
-yt-live-chat-paid-message-renderer #content * {
-  color: white !important;
-  font-family: "Hachi Maru Pop", cursive;
+yt-live-chat-paid-message-renderer #header {
+  min-height: auto !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 0.5em 0.75em 0.55em;
+  position: absolute;
+  top: -16px;
+  left: 8px;
+}
+yt-live-chat-paid-message-renderer #header::after {
+  content: ":";
+}
+yt-live-chat-paid-message-renderer #header::after {
+  display: none;
+}
+yt-live-chat-paid-message-renderer #header-content {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+yt-live-chat-paid-message-renderer #header #author-name::after {
+  content: ":";
+  margin: 0 8px;
+}
+yt-live-chat-paid-message-renderer #header #purchase-amount {
+  font-size: 24px !important;
+}
+yt-live-chat-paid-message-renderer #content {
+  background: transparent !important;
+}
+yt-live-chat-paid-message-renderer #content, yt-live-chat-paid-message-renderer #content * {
+  color: rgb(255, 255, 255) !important;
+  font-family: "DotGothic16", sans-serif;
   font-size: 18px !important;
-  line-height: 18px !important;
+  line-height: 1 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+          filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
 }
-
 yt-live-chat-legacy-paid-message-renderer {
-  background-color: transparent !important;
+  background-color: rgb(30, 120, 60) !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   margin: 4px 0 !important;
 }
-
 yt-live-chat-text-message-renderer a, yt-live-chat-legacy-paid-message-renderer a {
   text-decoration: none !important;
 }
-
 yt-live-chat-text-message-renderer[is-deleted], yt-live-chat-legacy-paid-message-renderer[is-deleted] {
   display: none !important;
 }
-
 yt-live-chat-ticker-renderer {
   background-color: transparent !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   display: none !important;
 }
-
-yt-live-chat-ticker-paid-message-item-renderer,
-yt-live-chat-ticker-paid-message-item-renderer *, yt-live-chat-ticker-sponsor-item-renderer,
-yt-live-chat-ticker-sponsor-item-renderer * {
-  color: white !important;
-  font-family: "Hachi Maru Pop", cursive;
+yt-live-chat-ticker-paid-message-item-renderer, yt-live-chat-ticker-paid-message-item-renderer *, yt-live-chat-ticker-sponsor-item-renderer, yt-live-chat-ticker-sponsor-item-renderer * {
+  color: rgb(255, 255, 255) !important;
+  font-family: "DotGothic16", sans-serif;
 }
-
 yt-live-chat-mode-change-message-renderer, yt-live-chat-viewer-engagement-message-renderer, yt-live-chat-restricted-participation-renderer {
   display: none !important;
 }
-
 yt-live-chat-banner-manager {
   display: none !important;
 }
-
-yt-live-chat-action-panel-renderer,
-yt-live-chat-renderer #action-panel {
+yt-live-chat-action-panel-renderer, yt-live-chat-renderer #action-panel {
   display: none !important;
 }
 
 /* Animation */
-@-webkit-keyframes anime {
+@-webkit-keyframes cycle {
   0% {
-    -webkit-transform: scale(0) translateY(5px);
-            transform: scale(0) translateY(5px);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    -webkit-transform: scale(1) translateY(8px);
+            transform: scale(1) translateY(8px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
     opacity: 0;
   }
-  10% {
+  5% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    -webkit-transform-origin: top;
+            transform-origin: top;
     opacity: 1;
   }
-  90% {
+  97% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    -webkit-transform-origin: top;
+            transform-origin: top;
     opacity: 1;
+  }
+  99.9% {
+    -webkit-transform: scale(0) translateY(0);
+            transform: scale(0) translateY(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+    position: relative;
   }
   100% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    opacity: .25;
+    display: none;
+    opacity: 0;
+    position: fixed;
   }
 }
-@keyframes anime {
+@keyframes cycle {
   0% {
-    -webkit-transform: scale(0) translateY(5px);
-            transform: scale(0) translateY(5px);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    -webkit-transform: scale(1) translateY(8px);
+            transform: scale(1) translateY(8px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
     opacity: 0;
   }
-  10% {
+  5% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    -webkit-transform-origin: top;
+            transform-origin: top;
     opacity: 1;
   }
-  90% {
+  97% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    -webkit-transform-origin: top;
+            transform-origin: top;
     opacity: 1;
   }
-  100% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    opacity: .25;
-  }
-}
-
-@-webkit-keyframes anime_paid {
-  0% {
-    -webkit-transform: scale(0) translateY(5px);
-            transform: scale(0) translateY(5px);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+  99.9% {
+    -webkit-transform: scale(0) translateY(0);
+            transform: scale(0) translateY(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
     opacity: 0;
-  }
-  10% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    opacity: 1;
-  }
-  90% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    opacity: 1;
+    position: relative;
   }
   100% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    opacity: .25;
-  }
-}
-
-@keyframes anime_paid {
-  0% {
-    -webkit-transform: scale(0) translateY(5px);
-            transform: scale(0) translateY(5px);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    display: none;
     opacity: 0;
+    position: fixed;
   }
-  10% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+}
+@-webkit-keyframes flash {
+  0%, 100% {
     opacity: 1;
   }
-  90% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+  50% {
+    opacity: 0.9;
+  }
+}
+@keyframes flash {
+  0%, 100% {
     opacity: 1;
   }
-  100% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    opacity: .25;
+  50% {
+    opacity: 0.9;
   }
 }
-
-yt-live-chat-text-message-renderer, yt-live-chat-legacy-paid-message-renderer {
-  -webkit-animation: anime 10000ms both;
-          animation: anime 10000ms both;
+yt-live-chat-text-message-renderer, yt-live-chat-legacy-paid-message-renderer, yt-live-chat-paid-message-renderer {
+  -webkit-animation: cycle 30000ms forwards;
+          animation: cycle 30000ms forwards;
 }
 
-yt-live-chat-paid-message-renderer {
-  -webkit-animation: anime_paid 10000ms both;
-          animation: anime_paid 10000ms both;
-}
-
-/*Speech bubble*/
-yt-live-chat-text-message-renderer #content, yt-live-chat-legacy-paid-message-renderer #content {
-  width: auto;
-  margin-left: 10px;
-  background-color: white;
-  padding: .25em .25em .75em;
-  border-radius: 8px;
-  position: relative;
-}
-
-yt-live-chat-text-message-renderer #content::before, yt-live-chat-legacy-paid-message-renderer #content::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 30%;
-  left: -18px;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 10px 0px 0px 20px;
-  border-color: white transparent transparent;
-  -webkit-transform: rotate(16deg);
-          transform: rotate(16deg);
-}
-
-yt-live-chat-text-message-renderer #message, yt-live-chat-legacy-paid-message-renderer #message {
-  display: block;
-  margin-top: 5px;
-}
-
-yt-live-chat-legacy-paid-message-renderer #content {
-  background-color: #1e783c;
-}
-
-yt-live-chat-legacy-paid-message-renderer #content::before {
-  border-color: #1e783c transparent transparent;
-}
-/*# sourceMappingURL=comments.css.map */
+yt-live-chat-paid-message-renderer #header #purchase-amount {
+  -webkit-animation: flash 800ms infinite;
+          animation: flash 800ms infinite;
+}/*# sourceMappingURL=comments.css.map */

@@ -1,26 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
-$color-white: rgb(255, 255, 255);
-$color-black30: rgb(30, 30, 30); 
-$color-gray: rgb(90, 90, 90);
-$color-red: rgb(210, 30, 30);
-$color-aqua: rgb(30, 120, 180);
-$color-green180: rgb(30, 180, 90);
-$color-green120: rgb(30, 120, 60);
+$color-timestamp: rgb(90, 90, 90);
+$color-author-name: rgb(255, 255, 255);
+$color-owner: rgb(141, 127, 218);
+$color-moderator: rgb(210, 30, 30);
+$color-member: rgb(226, 166, 97);
+$color-message: rgb(255, 255, 255);
+$color-message-window: rgb(30, 30, 30);
+$color-message-window-border: rgb(255, 255, 255);
 
-$color-timestamp: $color-gray;
-$color-author-name: $color-aqua;
-$color-owner: $color-green180;
-$color-moderator: $color-red;
-$color-member: $color-green120;
-$color-message: $color-black30;
-$color-bg-balloon: $color-white;
-$color-bg-balloon-member: $color-member;
-
-$font: "Hachi Maru Pop", cursive;
+$font: 'DotGothic16', sans-serif;
 
 @mixin bg-color-transparent() {
   background-color: transparent !important;
+}
+
+@mixin window() {
+  box-sizing: border-box;
+  background-color: $color-message-window;
+  border: 2px solid $color-message-window-border;
+  border-radius: 4px;
+}
+
+@mixin message-window() {
+  @include window();
+  padding: 32px 8px 16px;
+  position: relative;
+  &:not(:first-child) {
+    margin-top: 32px !important;
+  }
+  & #content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@mixin name-window() {
+  @include window();
+  padding: .5em .75em .55em;
+  position: absolute;
+  top: -16px;
+  left: 8px;
+  &::after {
+    content: ":";
+  }
 }
 
 /* Background colors*/
@@ -31,53 +55,38 @@ body {
 /* Transparent background. */
 yt-live-chat-renderer {
   @include bg-color-transparent();
+  outline: none !important;
+  padding-top: 32px;
 }
 yt-live-chat-text-message-renderer {
   &,
   &[is-highlighted] {
-    @include bg-color-transparent();
+    @include message-window();
   }
   &[author-type="owner"] {
     &,
     &[is-highlighted] {
-      @include bg-color-transparent();
+      @include message-window();
     }
   }
   &[author-type="moderator"] {
     &,
     &[is-highlighted] {
-      @include bg-color-transparent();
+      @include message-window();
     }
   }
   &[author-type="member"] {
     &,
     &[is-highlighted] {
-      @include bg-color-transparent();
+      @include message-window();
     }
   }
 }
 yt-live-chat-author-chip {
   #author-name {
-    @include bg-color-transparent();
+    @include message-window();
   }
 }
-
-
-// /* Outlines */
-// yt-live-chat-renderer {
-//   * {
-//     text-shadow: -2px -2px #000000,-2px -1px #000000,-2px 0px #000000,-2px 1px #000000,-2px 2px #000000,-1px -2px #000000,-1px -1px #000000,-1px 0px #000000,-1px 1px #000000,-1px 2px #000000,0px -2px #000000,0px -1px #000000,0px 0px #000000,0px 1px #000000,0px 2px #000000,1px -2px #000000,1px -1px #000000,1px 0px #000000,1px 1px #000000,1px 2px #000000,2px -2px #000000,2px -1px #000000,2px 0px #000000,2px 1px #000000,2px 2px #000000;
-//     font-family: $font;
-//     font-size: 18px !important;
-//     line-height: 18px !important;
-//   }
-// }
-// yt-live-chat-text-message-renderer,
-// yt-live-chat-legacy-paid-message-renderer {
-//   #content {
-//     overflow: initial !important;
-//   }
-// }
 
 /* Hide scrollbar. */
 yt-live-chat-item-list-renderer {
@@ -97,32 +106,12 @@ yt-live-chat {
   }
 }
 
-/* Reduce side padding. */
-yt-live-chat {
-  &-text,
-  &-legacy-paid {
-    &-message-renderer {
-      padding-left: 4px !important;
-      padding-right: 4px !important;
-    }
-  }
-  &-paid-message-renderer {
-    #header {
-      padding-left: 4px !important;
-      padding-right: 4px !important;
-    }
-  }
-}
-
 /* Avatars. */
 yt-live-chat-text-message-renderer,
 yt-live-chat-paid-message-renderer,
 yt-live-chat-legacy-paid-message-renderer {
   #author-photo {
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 32px !important;
-    margin-right: 6px !important;
+    display: none !important;
   }
 }
 
@@ -140,7 +129,7 @@ yt-live-chat-text-message-renderer {
     color: $color-timestamp !important;
     font-family: $font;
     font-size: 16px !important;
-    line-height: 16px !important;
+    line-height: 1 !important;
   }
 }
 
@@ -163,11 +152,10 @@ yt-live-chat-text-message-renderer {
   }
 }
 
-
-
 /* Channel names. */
 yt-live-chat-text-message-renderer {
   #author-name {
+    @include name-window();
     color: $color-author-name !important;
     font-family: $font;
     font-size: 16px !important;
@@ -193,43 +181,75 @@ yt-live-chat {
   &-paid,
   &-legacy-paid {
     &-message-renderer {
+      @include message-window();
+      padding-top: 16px;
       & #author-name,
       & #event-text {
         &,
         & * {
-          color: $color-white !important;
+          color: $color-message!important;
           font-family: $font;
           font-size: 20px !important;
-          line-height: 20px !important;
+          font-weight: bold;
+          line-height: 1 !important;
         }
       }
       & #purchase-amount,
       & #detail-text {
         &,
         & * {
-          color: $color-white !important;
+          color: $color-message !important;
           font-family: $font;
           font-size: 18px !important;
-          line-height: 18px !important;
+          line-height: 1 !important;
         }
       }
 
     }
   }
   &-paid-message-renderer {
-    margin: 4px 0 !important;
+    margin: 0 !important;
+    padding-top: 32px !important;
+    & #header {
+      min-height: auto !important;
+      @include name-window();
+      &::after {
+        display: none;
+      }
+      &-content {
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      & #author-name {
+        &::after {
+          content: ':';
+          margin: 0 8px;
+        }
+      }
+      & #purchase-amount {
+        font-size: 24px !important;
+      }
+    }
     & #content {
+      background: transparent !important;
       &,
       & * {
-        color: $color-white !important;
+        color: $color-message !important;
         font-family: $font;
         font-size: 18px !important;
-        line-height: 18px !important;
+        line-height: 1 !important;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        filter: drop-shadow(0 0 2px #fff6);
       }
     }
   }
   &-legacy-paid-message-renderer {
-    @include bg-color-transparent();
+    background-color: rgb(30, 120, 60) !important;
     box-shadow: none !important;
     margin: 4px 0 !important;
   }
@@ -256,7 +276,7 @@ yt-live-chat {
       &-item-renderer {
         &,
         & * {
-          color: $color-white !important;
+          color: $color-message !important;
           font-family: $font;
         }
       }
@@ -279,111 +299,63 @@ yt-live-chat {
 }
 
 /* Animation */
-@keyframes anime {
+@keyframes cycle {
   0% {
-    transform: scale(0) translateY(5px);
-    transform-origin: left;
+    transform: scale(1) translateY(8px);
+    transform-origin: top;
     opacity: 0;
   }
-  10% {
+  5% {
     transform: scale(1) translateY(0);
-    transform-origin: left;
+    transform-origin: top;
     opacity: 1;
   }
-  90% {
+  97% {
     transform: scale(1) translateY(0);
-    transform-origin: left;
+    transform-origin: top;
     opacity: 1;
+  }
+  99.9% {
+    transform: scale(0) translateY(0);
+    transform-origin: top;
+    opacity: 0;
+    position: relative;
   }
   100% {
-    transform: scale(1) translateY(0);
-    transform-origin: left;
-    opacity: .25;
+    display: none;
+    opacity: 0;
+    position: fixed;
   }
 }
-
-@keyframes anime_paid {
-  0% {
-    transform: scale(0) translateY(5px);
-    transform-origin: left;
-    opacity: 0;
-  }
-  10% {
-    transform: scale(1) translateY(0);
-    transform-origin: left;
-    opacity: 1;
-  }
-  90% {
-    transform: scale(1) translateY(0);
-    transform-origin: left;
-    opacity: 1;
-  }
+@keyframes flash {
+  0%,
   100% {
-    transform: scale(1) translateY(0);
-    transform-origin: left;
-    opacity: .25;
+    opacity: 1;
   }
+  50% {
+    opacity: .9;
+  }
+
 }
 
 yt-live-chat {
   &-text,
-  &-legacy-paid {
+  &-legacy-paid,
+  &-paid {
     &-message-renderer {
-      animation: anime 10000ms both;
+      animation: cycle 30000ms forwards;
     }
   }
 }
-
 yt-live-chat {
   &-paid {
     &-message-renderer {
-      animation: anime_paid 10000ms both;
+      & #header {
+        & #purchase-amount {
+          animation: flash 800ms infinite;
+        }
+      }
     }
   }
 }
 
-/*Speech bubble*/
-yt-live-chat {
-  &-text,
-  &-legacy-paid {
-    &-message-renderer {
-      #content{
-        width: auto;
-        margin-left: 10px;
-        background-color: $color-bg-balloon;
-        padding: .25em .25em .75em;
-        border-radius: 8px;
-        position: relative;
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 30%;
-          left: -18px;
-          width: 0px;
-          height: 0px;
-          border-style: solid;
-          border-width: 10px 0px 0px 20px;
-          border-color: $color-bg-balloon transparent transparent;
-          transform: rotate(16deg);
-        }
-      }
-      #message {
-        display: block;
-        margin-top: 5px;
-      }      
-    }
-  }
-}
-yt-live-chat {
-  &-legacy-paid {
-    &-message-renderer {
-      #content{
-        background-color: $color-bg-balloon-member;
-        &::before {
-          border-color: $color-bg-balloon-member transparent transparent;
-        }
-      }
-    }
-  }
-}
