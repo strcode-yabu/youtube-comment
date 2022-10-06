@@ -2,7 +2,7 @@
 
 Comment display style for OBS Studio.
 
-- [Demo.](./index.html)
+- [Demo.](https://strcode-yabu.github.io/youtube-comment/)
 - [CSS Code.](./assets/css/comments.css)
 
 ## Reference
