@@ -26,8 +26,8 @@ $font: 'DotGothic16', sans-serif;
   @include window();
   padding: 32px 8px 16px;
   position: relative;
-  &:not(:first-child) {
-    margin-top: 32px !important;
+  &:not(:last-child) {
+    margin-bottom: 32px !important;
   }
   & #content {
     display: flex;
@@ -56,7 +56,7 @@ body {
 yt-live-chat-renderer {
   @include bg-color-transparent();
   outline: none !important;
-  padding-top: 32px;
+  padding: 32px 4px;
 }
 yt-live-chat-text-message-renderer {
   &,

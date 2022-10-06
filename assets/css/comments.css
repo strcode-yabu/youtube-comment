@@ -9,7 +9,7 @@ body {
 yt-live-chat-renderer {
   background-color: transparent !important;
   outline: none !important;
-  padding-top: 32px;
+  padding: 32px 4px;
 }
 
 yt-live-chat-text-message-renderer, yt-live-chat-text-message-renderer[is-highlighted] {
@@ -21,8 +21,8 @@ yt-live-chat-text-message-renderer, yt-live-chat-text-message-renderer[is-highli
   padding: 32px 8px 16px;
   position: relative;
 }
-yt-live-chat-text-message-renderer:not(:first-child), yt-live-chat-text-message-renderer[is-highlighted]:not(:first-child) {
-  margin-top: 32px !important;
+yt-live-chat-text-message-renderer:not(:last-child), yt-live-chat-text-message-renderer[is-highlighted]:not(:last-child) {
+  margin-bottom: 32px !important;
 }
 yt-live-chat-text-message-renderer #content, yt-live-chat-text-message-renderer[is-highlighted] #content {
   display: -webkit-box;
@@ -43,8 +43,8 @@ yt-live-chat-text-message-renderer[author-type=owner], yt-live-chat-text-message
   padding: 32px 8px 16px;
   position: relative;
 }
-yt-live-chat-text-message-renderer[author-type=owner]:not(:first-child), yt-live-chat-text-message-renderer[author-type=owner][is-highlighted]:not(:first-child) {
-  margin-top: 32px !important;
+yt-live-chat-text-message-renderer[author-type=owner]:not(:last-child), yt-live-chat-text-message-renderer[author-type=owner][is-highlighted]:not(:last-child) {
+  margin-bottom: 32px !important;
 }
 yt-live-chat-text-message-renderer[author-type=owner] #content, yt-live-chat-text-message-renderer[author-type=owner][is-highlighted] #content {
   display: -webkit-box;
@@ -65,8 +65,8 @@ yt-live-chat-text-message-renderer[author-type=moderator], yt-live-chat-text-mes
   padding: 32px 8px 16px;
   position: relative;
 }
-yt-live-chat-text-message-renderer[author-type=moderator]:not(:first-child), yt-live-chat-text-message-renderer[author-type=moderator][is-highlighted]:not(:first-child) {
-  margin-top: 32px !important;
+yt-live-chat-text-message-renderer[author-type=moderator]:not(:last-child), yt-live-chat-text-message-renderer[author-type=moderator][is-highlighted]:not(:last-child) {
+  margin-bottom: 32px !important;
 }
 yt-live-chat-text-message-renderer[author-type=moderator] #content, yt-live-chat-text-message-renderer[author-type=moderator][is-highlighted] #content {
   display: -webkit-box;
@@ -87,8 +87,8 @@ yt-live-chat-text-message-renderer[author-type=member], yt-live-chat-text-messag
   padding: 32px 8px 16px;
   position: relative;
 }
-yt-live-chat-text-message-renderer[author-type=member]:not(:first-child), yt-live-chat-text-message-renderer[author-type=member][is-highlighted]:not(:first-child) {
-  margin-top: 32px !important;
+yt-live-chat-text-message-renderer[author-type=member]:not(:last-child), yt-live-chat-text-message-renderer[author-type=member][is-highlighted]:not(:last-child) {
+  margin-bottom: 32px !important;
 }
 yt-live-chat-text-message-renderer[author-type=member] #content, yt-live-chat-text-message-renderer[author-type=member][is-highlighted] #content {
   display: -webkit-box;
@@ -110,8 +110,8 @@ yt-live-chat-author-chip #author-name {
   padding: 32px 8px 16px;
   position: relative;
 }
-yt-live-chat-author-chip #author-name:not(:first-child) {
-  margin-top: 32px !important;
+yt-live-chat-author-chip #author-name:not(:last-child) {
+  margin-bottom: 32px !important;
 }
 yt-live-chat-author-chip #author-name #content {
   display: -webkit-box;
@@ -212,8 +212,8 @@ yt-live-chat-paid-message-renderer, yt-live-chat-legacy-paid-message-renderer {
   position: relative;
   padding-top: 16px;
 }
-yt-live-chat-paid-message-renderer:not(:first-child), yt-live-chat-legacy-paid-message-renderer:not(:first-child) {
-  margin-top: 32px !important;
+yt-live-chat-paid-message-renderer:not(:last-child), yt-live-chat-legacy-paid-message-renderer:not(:last-child) {
+  margin-bottom: 32px !important;
 }
 yt-live-chat-paid-message-renderer #content, yt-live-chat-legacy-paid-message-renderer #content {
   display: -webkit-box;
