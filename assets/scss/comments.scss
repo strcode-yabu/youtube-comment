@@ -18,21 +18,22 @@ $font: 'DotGothic16', sans-serif;
 @mixin window() {
   box-sizing: border-box;
   background-color: $color-message-window;
-  border: 2px solid $color-message-window-border;
+  border: 2px solid $color-message-window-border !important;
   border-radius: 4px;
 }
 
 @mixin message-window() {
   @include window();
-  padding: 32px 8px 16px;
+  padding: 16px 8px;
   position: relative;
+  overflow: unset;
+  contain: none;
   &:not(:last-child) {
     margin-bottom: 32px !important;
   }
   & #content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
   }
 }
 
@@ -42,9 +43,6 @@ $font: 'DotGothic16', sans-serif;
   position: absolute;
   top: -16px;
   left: 8px;
-  &::after {
-    content: ":";
-  }
 }
 
 /* Background colors*/
@@ -92,6 +90,7 @@ yt-live-chat-author-chip {
 yt-live-chat-item-list-renderer {
   #items,
   #item-scroller {
+    padding: 24px 0 4px !important;
     overflow: hidden !important;
   }
 }
@@ -294,6 +293,13 @@ yt-live-chat {
   }
   &-action-panel-renderer,
   &-renderer #action-panel {
+    display: none !important;
+  }
+}
+
+#separator,
+#panel-pages {
+  .yt-live-chat-renderer {
     display: none !important;
   }
 }
